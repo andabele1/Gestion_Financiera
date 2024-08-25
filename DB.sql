@@ -29,9 +29,9 @@ CREATE TABLE Extractos (
     monto DECIMAL(15, 2) NOT NULL,
     fecha DATETIME NOT NULL,
     descripcion TEXT NOT NULL,
-    banco_id INT NOT NULL, -- FK que referencia a la tabla Bolsillo
-    meta_id INT NOT NULL, -- FK que referencia a la tabla Meta 
-    pago_id INT NOT NULL, -- FK que referencia a la tabla Pago 
+    banco_id INT, -- FK que referencia a la tabla Bolsillo
+    meta_id INT, -- FK que referencia a la tabla Meta
+    pago_id INT, -- FK que referencia a la tabla Pago
     FOREIGN KEY (banco_id) REFERENCES Bolsillo(id) ON DELETE SET NULL,
     FOREIGN KEY (meta_id) REFERENCES Meta(id) ON DELETE SET NULL,
     FOREIGN KEY (pago_id) REFERENCES Pago(id) ON DELETE SET NULL
